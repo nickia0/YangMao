@@ -1,43 +1,28 @@
-name: 多看点
+#参照ruicky/jd_sign_bot
 
+name: Github dkd-auto-coin
 on:
-  workflow_dispatch:
-  schedule:
-     - cron: '13 0-15 * * *'
-  watch:
-    types: started
+    push:
+        branches:
+            - master
+    schedule:
+        - cron: '27 * * * *'
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    env:
-       #DKD_URL: ${{ secrets.DKD_URL }}
-        DKD_HD: ${{ secrets.DKD_HD }}
-        DKD_BD: ${{ secrets.DKD_BD }}
-       #DKD_TX_URL: ${{ secrets.DKD_TX_URL }}
-        DKD_TX_HD: ${{ secrets.DKD_TX_HD }}
-        DKD_TX_BD: ${{ secrets.DKD_TX_BD }}
-        TZ: Asia/shanghai
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-        
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: npm install
-        run: |
-          npm install
-      - name: '运行 【多看点】'
-        if: env.DKD_HD
-        run: |
-          node Task/dkd.js
-        env:
-          PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+    build:
+        runs-on: ubuntu-latest
+ 
+        steps:
+            - name: Checkout codes
+              uses: actions/checkout@v2
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                node-version: '12.x'
+            - name: Run
+              run: npm install
+            - run: node dkd_coin.js
+              env:
+                dkdurl: ${{ secrets.dkdurl }}
+                dkdbody: ${{ secrets.dkdbody }}
+                sckey: ${{ secrets.sckey }}
+                dkdhd: ${{ secrets.dkdhd }}
