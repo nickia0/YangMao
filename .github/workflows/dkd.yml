@@ -32,7 +32,7 @@ jobs:
       - name: '运行 【多看点】'
         if: env.DKD_HD
         run: |
-          node scripts/dkd.js
+          node Task/dkd.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
