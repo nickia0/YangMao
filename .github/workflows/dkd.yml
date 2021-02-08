@@ -1,4 +1,4 @@
-name: 步步宝
+name: 多看点
 
 on:
     workflow_dispatch:
