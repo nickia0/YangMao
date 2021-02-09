@@ -127,7 +127,7 @@ if (process.env.DKD_TX_BD && process.env.DKD_TX_BD.split('\n').length > 0) {
           dkdtxurlArr.push(dkdtxurl[item])
         }
     }); */
-   Object.keys(dkdtxhd).forEach((item) => {
+/*   Object.keys(dkdtxhd).forEach((item) => {
         if (dkdtxhd[item]) {
           dkdtxhdArr.push(dkdtxhd[item])
         }
@@ -136,7 +136,7 @@ if (process.env.DKD_TX_BD && process.env.DKD_TX_BD.split('\n').length > 0) {
         if (dkdtxbody[item]) {
           dkdtxbodyArr.push(dkdtxbody[item])
         }
-    });  
+    });  */
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
