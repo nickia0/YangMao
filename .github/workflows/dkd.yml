@@ -1,4 +1,4 @@
-name: dkd
+name: 多看点-任务
 
 on:
   workflow_dispatch:
@@ -15,8 +15,8 @@ jobs:
         DKD_HD: ${{ secrets.DKD_HD }}
         DKD_BD: ${{ secrets.DKD_BD }}
        #DKD_TX_URL: ${{ secrets.DKD_TX_URL }}
-       #DKD_TX_HD: ${{ secrets.DKD_TX_HD }}
-       #DKD_TX_BD: ${{ secrets.DKD_TX_BD }}
+        DKD_TX_HD: ${{ secrets.DKD_TX_HD }}
+        DKD_TX_BD: ${{ secrets.DKD_TX_BD }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【DKD】'
+      - name: '运行 【多看点-任务】'
         if: env.DKD_HD
         run: |
           node Task/dkd.js

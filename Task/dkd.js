@@ -95,7 +95,7 @@ if (process.env.DKD_BD && process.env.DKD_BD.split('\n').length > 0) {
   } else {
    dkdtxurl = process.env.DKD_TX_URL.split()
   }; */
-/* if (process.env.DKD_TX_HD && process.env.DKD_TX_HD.split('\n').length > 0) {
+if (process.env.DKD_TX_HD && process.env.DKD_TX_HD.split('\n').length > 0) {
    dkdtxhd = process.env.DKD_TX_HD.split('\n');
   } else  {
    dkdtxhd = process.env.DKD_TX_HD.split()
@@ -104,7 +104,7 @@ if (process.env.DKD_TX_BD && process.env.DKD_TX_BD.split('\n').length > 0) {
    dkdtxbody = process.env.DKD_TX_BD.split('\n');
   } else  {
    dkdtxbody = process.env.DKD_TX_BD.split()
-  };  */
+  };  
 //video
 /*  Object.keys(dkdurl).forEach((item) => {
         if (dkdurl[item]) {
@@ -127,7 +127,7 @@ if (process.env.DKD_TX_BD && process.env.DKD_TX_BD.split('\n').length > 0) {
           dkdtxurlArr.push(dkdtxurl[item])
         }
     }); */
-/*   Object.keys(dkdtxhd).forEach((item) => {
+   Object.keys(dkdtxhd).forEach((item) => {
         if (dkdtxhd[item]) {
           dkdtxhdArr.push(dkdtxhd[item])
         }
@@ -136,7 +136,7 @@ if (process.env.DKD_TX_BD && process.env.DKD_TX_BD.split('\n').length > 0) {
         if (dkdtxbody[item]) {
           dkdtxbodyArr.push(dkdtxbody[item])
         }
-    });  */
+    });  
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
