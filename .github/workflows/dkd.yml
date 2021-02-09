@@ -3,7 +3,7 @@ name: 多看点-任务
 on:
   workflow_dispatch:
   schedule:
-     - cron: '13 0-15 * * *'
+     - cron: '*/30 0-15 * * *'
   watch:
     types: started
 jobs:
