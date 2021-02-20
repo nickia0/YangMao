@@ -1,4 +1,4 @@
-name: 走路赚
+name: 走路赚钱
 
 
 on:
@@ -26,7 +26,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【走路赚】'
+      - name: '运行 【走路赚钱】'
         if: env.RUNSTEP_TOKEN
         run: |
           node Task/runstep.js
