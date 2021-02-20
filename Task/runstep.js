@@ -33,14 +33,33 @@ let today1 = formatDateTime(new Date());
 let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
-const runsteptokenArr = [{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 14.4; Scale/2.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}];
+const runsteptokenArr = [];
 let runsteptokenVal = "";
 
-const runstepkeyArr = [{"Referer":"https://servicewechat.com/wx12b60cc9e37c9240/22/page-frame.html","Connection":"keep-alive","Host":"runstep.kujievip.com","Accept-Encoding":"gzip,compress,br,deflate","Content-Type":"application/x-www-form-urlencoded","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022c) NetType/WIFI Language/zh_CN"}];
+const runstepkeyArr = [];
 let runstepkeyVal = "";
 
 
 if ($.isNode()) {
+    if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('#') > -1) {
+   runsteptokenVal = process.env.RUNSTEPTOKEN.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('\n') > -1) {
+   runsteptokenVal = process.env.RUNSTEPTOKEN.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   runsteptokenVal = process.env.RUNSTEPTOKEN.split()
+  };
+  if (process.env. RUNSTEPKEY&& process.env.RUNSTEPKEY.indexOf('#') > -1) {
+   runstepkeyVal = process.env.RUNSTEPKEY.split('#');
+  }
+  else if (process.env.RUNSTEPKEY && process.env.RUNSTEPKEY.split('\n').length > 0) {
+   runstepkeyVal = process.env.RUNSTEPKEY.split('\n');
+  } else  {
+   runstepkeyVal = process.env.RUNSTEPKEY.split()
+  };
+  
   Object.keys(runsteptokenVal).forEach((item) => {
     if (runsteptokenVal[item]) {
       runsteptokenArr.push(runsteptokenVal[item])
