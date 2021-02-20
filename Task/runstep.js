@@ -33,11 +33,11 @@ let today1 = formatDateTime(new Date());
 let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
-const runsteptokenArr = [];
-let runsteptokenVal = "{"Referer":"https://servicewechat.com/wx12b60cc9e37c9240/22/page-frame.html","Connection":"keep-alive","Host":"runstep.kujievip.com","Accept-Encoding":"gzip,compress,br,deflate","Content-Type":"application/x-www-form-urlencoded","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022c) NetType/WIFI Language/zh_CN"}";
+const runsteptokenArr = [{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 14.4; Scale/2.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}];
+let runsteptokenVal = "";
 
-const runstepkeyArr = [];
-let runstepkeyVal = "{"User-Agent":"zou lu zhuan qian/1.5.1 (iPhone; iOS 14.4; Scale/2.00)","Host":"runstep.kujievip.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}";
+const runstepkeyArr = [{"Referer":"https://servicewechat.com/wx12b60cc9e37c9240/22/page-frame.html","Connection":"keep-alive","Host":"runstep.kujievip.com","Accept-Encoding":"gzip,compress,br,deflate","Content-Type":"application/x-www-form-urlencoded","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022c) NetType/WIFI Language/zh_CN"}];
+let runstepkeyVal = "";
 
 
 if ($.isNode()) {
