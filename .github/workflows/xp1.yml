@@ -1,4 +1,4 @@
- name: 笑谱
+ name: 笑谱1
 
  on:
    workflow_dispatch:
