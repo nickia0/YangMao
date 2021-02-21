@@ -14,7 +14,7 @@
      runs-on: ubuntu-latest
      if: github.event.repository.owner.id == github.event.sender.id
      env:
-         XP_REFRESHTOKEN1: ${{ secrets.XP_REFRESHTOKEN1 }}
+         XP_refreshTOKEN1: ${{ secrets.XP_refreshTOKEN1 }}
          XP_live: ${{ secrets.XP_live }}
          XP_CASH: ${{ secrets.XP_CASH }}
      steps:
@@ -26,12 +26,12 @@
          with:
            node-version: 12.x
        - name: npm install
-         if: env.XP_REFRESHTOKEN1
+         if: env.XP_refreshTOKEN1
          run: |
            cd ~/JavaScript
            npm install
        - name: '运行 【笑谱】'
-         if: env.XP_REFRESHTOKEN1
+         if: env.XP_refreshTOKEN1
          run: |
            cd ~/JavaScript
            node Task/iboxpay.js
