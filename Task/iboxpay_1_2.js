@@ -67,7 +67,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zi
 
 
 
-refreshtokenVal 👉XP_refreshTOKEN
+refreshtokenVal 👉XP_REFRESHTOKEN_1_2
 
 设置任务 可设置 0 1 2    0开视频关直播 1开视频开直播 2关视频开直播
  LIVE  👉  XP_live
@@ -132,7 +132,7 @@ if ($.isNode()) {
     sms = process.env.XP_sms || 0
 
 }
-if ($.isNode() && process.env.XP_refreshTOKEN) {
+if ($.isNode() && process.env.XP_REFRESHTOKEN_1_2) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
     console.log(
         `============ cookies分隔符为：${JSON.stringify(
@@ -140,12 +140,12 @@ if ($.isNode() && process.env.XP_refreshTOKEN) {
     )} =============\n`
     );
     if (
-        process.env.XP_refreshTOKEN &&
-        process.env.XP_refreshTOKEN.indexOf(COOKIES_SPLIT) > -1
+        process.env.XP_REFRESHTOKEN_1_2 &&
+        process.env.XP_REFRESHTOKEN_1_2.indexOf(COOKIES_SPLIT) > -1
     ) {
-        middlerefreshTOKEN = process.env.XP_refreshTOKEN.split(COOKIES_SPLIT);
+        middlerefreshTOKEN = process.env.XP_REFRESHTOKEN_1_2.split(COOKIES_SPLIT);
     } else {
-        middlerefreshTOKEN = process.env.XP_refreshTOKEN.split();
+        middlerefreshTOKEN = process.env.XP_REFRESHTOKEN_1_2.split();
     }
 }
 if (COOKIE.refreshtokenVal) {
