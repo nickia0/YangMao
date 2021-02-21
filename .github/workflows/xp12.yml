@@ -14,7 +14,7 @@
      runs-on: ubuntu-latest
      if: github.event.repository.owner.id == github.event.sender.id
      env:
-         XP_refreshTOKEN1: ${{ secrets.XP_REFRESHTOKEN_1_2 }}
+         XP_REFRESHTOKEN_1_2 : ${{ secrets.XP_REFRESHTOKEN_1_2 }}
          XP_live: ${{ secrets.XP_live }}
          XP_CASH: ${{ secrets.XP_CASH }}
      steps:
