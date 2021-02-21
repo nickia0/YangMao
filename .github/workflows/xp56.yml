@@ -1,4 +1,4 @@
- name: 笑谱5
+ name: 笑谱5+6
 
  on:
    workflow_dispatch:
@@ -14,7 +14,7 @@
      runs-on: ubuntu-latest
      if: github.event.repository.owner.id == github.event.sender.id
      env:
-         XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN5 }}
+         XP_refreshTOKEN1: ${{ secrets.XP_REFRESHTOKEN_5_6 }}
          XP_live: ${{ secrets.XP_live }}
          XP_CASH: ${{ secrets.XP_CASH }}
      steps:
@@ -26,15 +26,15 @@
          with:
            node-version: 12.x
        - name: npm install
-         if: env.XP_refreshTOKEN5
+         if: env.XP_REFRESHTOKEN_5_6
          run: |
            cd ~/JavaScript
            npm install
        - name: '运行 【笑谱】'
-         if: env.XP_refreshTOKEN5
+         if: env.XP_REFRESHTOKEN_5_6
          run: |
            cd ~/JavaScript
-           node Task/iboxpay.js
+           node Task/iboxpay_5_6.js
          env:
            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
            TG_USER_ID: ${{ secrets.TG_USER_ID }}
