@@ -118,7 +118,7 @@ let livecs = 0,
     HBY = 0,
     liveIdcd = 0;
 RT = 30000;
-const refreshtokenArr = ['5d6205fdef69428c835909990e195f3f','9f2254ea67f8446d977922de326440e2'];
+const refreshtokenArr = [];
 let refreshtokenVal = ``;
 let middlerefreshTOKEN = [];
 if ($.isNode()) {
