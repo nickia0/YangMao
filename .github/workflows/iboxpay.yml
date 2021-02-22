@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/GGitJID/YangMao.git ~/js
+          git clone https://github.com/xiaokxiansheng/js.git ~/js
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -25,5 +25,5 @@ jobs:
           npm install request
       - name: '运行 【笑谱】'
         run: |
-          cd ~/js 
+          cd ~/js   
           node Task/iboxpays.js
