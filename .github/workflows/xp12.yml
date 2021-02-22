@@ -12,18 +12,18 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/GGitJID/YangMao.git ~/YangMao
+          git clone https://github.com/GGitJID/YangMao.git ~/js
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
-          cd ~/YangMao
+          cd ~/js
           npm install
           npm install cron
           npm install request
       - name: '运行 【笑谱】'
         run: |
-          cd ~/YangMao   
+          cd ~/js 
           node Task/iboxpays.js
